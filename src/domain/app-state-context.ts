@@ -2,7 +2,7 @@ import { IErrorPageInterface } from '.'
 
 export interface IAppState {
   isFetching: boolean
-  error: IErrorPageInterface | undefined
+  error?: IErrorPageInterface
 }
 
 export const INITIAL_STATE_APP: IAppState = {
