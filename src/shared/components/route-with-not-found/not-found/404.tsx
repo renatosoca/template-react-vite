@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom' // React Router para la navegación
 
 // Imágenes estáticas
-const errorImage = '/static/media/error404-BY9on4wS.png'
-const conesImage = '/static/media/twoCone-DGZwr5Sq.png'
+const errorImage = '/static/media/error404.png'
+const conesImage = '/static/media/twoCone.png'
 
 // Componente de la página de error 404
 const NotFoundPage = () => {

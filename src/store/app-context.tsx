@@ -1,4 +1,4 @@
-import { PropsWithChildren, createContext, useContext, useMemo, useReducer } from 'react'
+import { PropsWithChildren, createContext, useContext, useReducer } from 'react'
 import { IAppState, INITIAL_STATE_APP } from '@/domain'
 import { TDispatchApp, appReducer } from './app-reducer'
 
@@ -8,12 +8,9 @@ export const AppDispatchContext = createContext<TDispatchApp | undefined>(undefi
 export const AppProvider = ({ children }: PropsWithChildren) => {
   const [state, dispatch] = useReducer(appReducer, INITIAL_STATE_APP)
 
-  const stateMemorized = useMemo(() => state, [state])
-  const dispatchMemorized = useMemo(() => dispatch, [dispatch])
-
   return (
-    <AppStateContext.Provider value={stateMemorized}>
-      <AppDispatchContext.Provider value={dispatchMemorized}>{children}</AppDispatchContext.Provider>
+    <AppStateContext.Provider value={state}>
+      <AppDispatchContext.Provider value={dispatch}>{children}</AppDispatchContext.Provider>
     </AppStateContext.Provider>
   )
 }
